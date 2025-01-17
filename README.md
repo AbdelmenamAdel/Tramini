@@ -1,6 +1,6 @@
-# ai_app
+# Tramini
 
-A new Flutter project.
+Flutter Application integrated with Artificial Intelligence
 
 ## Getting Started
 

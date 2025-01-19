@@ -9,7 +9,7 @@ class ChatView extends StatelessWidget {
   final _provider = GeminiProvider(
     model: GenerativeModel(
       model: 'gemini-1.5-flash',
-      apiKey: ''.apiKey,
+      apiKey: ''.geminiApiKey,
     ),
   );
 

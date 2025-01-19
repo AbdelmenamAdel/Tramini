@@ -1,12 +1,12 @@
-import 'package:ai_app/screens/home_page.dart';
+import 'package:ai_app/features/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const AiApp());
+  runApp(const Tramini());
 }
 
-class AiApp extends StatelessWidget {
-  const AiApp({super.key});
+class Tramini extends StatelessWidget {
+  const Tramini({super.key});
 
   @override
   Widget build(BuildContext context) {

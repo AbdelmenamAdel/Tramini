@@ -1,5 +1,6 @@
 import 'package:ai_app/constants.dart';
 import 'package:ai_app/common/custom_button.dart';
+import 'package:ai_app/features/image/api/image_api.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/foundation.dart';
@@ -14,24 +15,19 @@ class AiTextToImageGenerator extends StatefulWidget {
 class _AiTextToImageGeneratorState extends State<AiTextToImageGenerator> {
   // Controller for the input field
   final TextEditingController _queryController = TextEditingController();
-  // Instance of StabilityAI for image generation
-  final StabilityAI _ai = StabilityAI();
-  // API key for the AI service
-  final String apiKey = 'sk-kJBhGzQsJk4eSQvlZDpEkXRZiwHVVCQyWHrtD614hh2PyeNU';
-  // Set the style for the generated image
   final ImageAIStyle imageAIStyle = ImageAIStyle.digitalPainting;
   // Flag to check if images have been generated
   bool isItems = false;
 
   // Function to generate an image based on the input query
-  Future<Uint8List> _generate(String query) async {
-    Uint8List image = await _ai.generateImage(
-      apiKey: apiKey, // API key
-      imageAIStyle: imageAIStyle, // Style for the image
-      prompt: query, // The text prompt input by the user
-    );
-    return image; // Return the generated image as bytes
-  }
+  // Future<Uint8List> _generate(String query) async {
+  //   Uint8List image = await _ai.generateImage(
+  //     apiKey: ''.imageApiKey, // API key
+  //     imageAIStyle: imageAIStyle, // Style for the image
+  //     prompt: query, // The text prompt input by the user
+  //   );
+  //   return image; // Return the generated image as bytes
+  // }
 
   // Dispose method to clean up the controller when the widget is removed from the tree
   @override
@@ -102,8 +98,9 @@ class _AiTextToImageGeneratorState extends State<AiTextToImageGenerator> {
               padding: const EdgeInsets.all(20),
               child: isItems // Check if images have been generated
                   ? FutureBuilder<Uint8List>(
-                      future: _generate(
-                          _queryController.text), // Call the generate function
+                      future: ImageApi().generateImage(
+                          imageName: _queryController
+                              .text), // Call the generate function
                       builder: (context, snapshot) {
                         if (snapshot.connectionState ==
                             ConnectionState.waiting) {

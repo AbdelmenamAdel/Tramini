@@ -4,7 +4,6 @@ import 'package:ai_app/features/image/api/image_api.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/foundation.dart';
-import 'package:stability_image_generation/stability_image_generation.dart';
 
 class AiTextToImageGenerator extends StatefulWidget {
   const AiTextToImageGenerator({super.key});
@@ -15,7 +14,6 @@ class AiTextToImageGenerator extends StatefulWidget {
 class _AiTextToImageGeneratorState extends State<AiTextToImageGenerator> {
   // Controller for the input field
   final TextEditingController _queryController = TextEditingController();
-  final ImageAIStyle imageAIStyle = ImageAIStyle.digitalPainting;
   // Flag to check if images have been generated
   bool isItems = false;
 
@@ -158,7 +156,7 @@ class _AiTextToImageGeneratorState extends State<AiTextToImageGenerator> {
               children: [
                 CustomButton(
                   title: 'Generate Image',
-                  width: 180,
+                  width: 200,
                   onPressed: () {
                     String query = _queryController.text; // Get the input text
                     if (query.isNotEmpty) {

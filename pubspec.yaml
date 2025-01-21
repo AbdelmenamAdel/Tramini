@@ -36,9 +36,7 @@ dependencies:
   flutter_svg: ^2.0.17
   font_awesome_flutter: ^10.7.0
   google_generative_ai: ^0.4.6
-  # http: ^1.2.1
   lottie: ^3.1.0
-  # stability_image_generation: ^0.0.4
   translator: ^1.0.0
 
 dev_dependencies:

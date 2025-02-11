@@ -45,7 +45,7 @@ Flutter Application integrated with Artificial Intelligence
 
 
 ## 🎥 Video
-
+https://github.com/AbdelmenamAdel/Tramini/blob/master/assets/tramini.mp4
 
 ## 🛠 Dependencies
 

@@ -1,4 +1,4 @@
-# ✔️ Tramini
+# Tramini
 
 Flutter Application integrated with Artificial Intelligence
 
